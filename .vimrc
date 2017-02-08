@@ -16,3 +16,7 @@ set mouse=a
 
 " split windows to the right
 set splitright
+
+set hlsearch
+set smartcase
+set incsearch
