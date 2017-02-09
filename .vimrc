@@ -12,7 +12,8 @@ set softtabstop=2
 set autoindent
 
 " enable mouse usage
-set mouse=a
+set mouse=n
+set ttymouse=xterm2
 
 " split windows to the right
 set splitright
