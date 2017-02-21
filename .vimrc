@@ -18,6 +18,7 @@ set ttymouse=xterm2
 " split windows to the right
 set splitright
 
-set hlsearch
+set ignorecase
 set smartcase
 set incsearch
+set hlsearch
