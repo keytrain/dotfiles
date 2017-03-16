@@ -6,7 +6,7 @@ set nu
 
 " make tab into spaces
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 " tab size
 set softtabstop=2
 set autoindent
