@@ -1,5 +1,9 @@
-filetype plugin indent on
-syntax on
+"filetype plugin indent on
+"syntax on
+
+if !has('gui_running')
+  set t_Co=256
+endif
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -13,13 +17,23 @@ Plug 'mxw/vim-jsx'
 Plug 'leshill/vim-json'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+Plug 'itchyny/lightline.vim'
+Plug 'w0rp/ale'
 call plug#end()
+
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
 
 set backspace=indent,eol,start
 set nu
+set laststatus=2
+set noshowmode
+set omnifunc=syntaxcomplete#Complete
 
 " make tab into spaces
 set expandtab
