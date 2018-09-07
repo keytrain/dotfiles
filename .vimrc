@@ -1,5 +1,4 @@
-"filetype plugin indent on
-"syntax on
+"key's vimrc
 
 if !has('gui_running')
   set t_Co=256
@@ -19,6 +18,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 let g:javascript_plugin_flow = 1
@@ -29,27 +29,45 @@ let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
-set backspace=indent,eol,start
-set nu
-set laststatus=2
-set noshowmode
-set omnifunc=syntaxcomplete#Complete
+"let g:gruvbox_italic = 1
+colorscheme gruvbox
 
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+
+set smarttab
 " make tab into spaces
 set expandtab
 set shiftwidth=2
 " tab size
 set softtabstop=2
-set autoindent
+
+set nrformats-=octal
+
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+set number
+set laststatus=2
+set ruler
+set wildmenu
+
+set display+=lastline
+
+set noshowmode
+set autoread
 
 " enable mouse usage
-set mouse=n
-set ttymouse=xterm2
+set mouse=a
+if has("mouse_sgr")
+  set ttymouse=sgr
+else
+  set ttymouse=xterm2
+end
 
 " split windows to the right
 set splitright
 
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
